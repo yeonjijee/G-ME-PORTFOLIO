@@ -659,8 +659,8 @@ body, html {
 }
 
 .recipe-images .line-img {
-    width: 120px; /* Larger line image */
-    height: 40px;
+    width: 90px;
+    height: 30px;
     border-radius: 0;
 }
 

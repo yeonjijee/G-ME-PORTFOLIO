@@ -343,7 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const rows = recipes.map(p => {
                 const lineKey = Array.isArray(p.lines) ? p.lines[0] : p.line;
-                const lineImg = `<img src="lines/${lineKey}.png" alt="${lineKey}" class="line-img">`;
+                const allLines = Array.isArray(p.lines) ? p.lines : [p.line];
+                const lineImgs = allLines.map(lk => `<img src="lines/${lk}.png" alt="${lk}" class="line-img">`).join('');
                 
                 let beads = p.beads;
                 if (isEasterEgg) {
@@ -356,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const titleHtml = `<div class="recipe-title">${p.result.title}</div>`;
                 
                 return `<a href="index.html?line=${encodeURIComponent(lineKey)}&beads=${encodeURIComponent(JSON.stringify(p.beads))}" class="recipe-row">
-                            <div class="recipe-images">${lineImg}${beadImgs}</div>
+                            <div class="recipe-images">${lineImgs}${beadImgs}</div>
                             <span>→</span>
                             ${titleHtml}
                         </a>`;
@@ -394,6 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortedSelectedBeads = selectedBeads.sort();
         let matchFound = false;
         let resultData;
+        let combinationLines;
 
         for (const combination of completionData) {
             if (combination.dud) continue;
@@ -405,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isLineMatch && areBeadsSame) {
                 resultData = combination.result;
+                combinationLines = Array.isArray(combination.lines) ? combination.lines : [combination.line];
                 matchFound = true;
                 break;
             }
@@ -412,7 +415,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const isDud = !matchFound;
         const finalResultData = isDud ? completionData.find(c => c.dud === true).result : resultData;
-        const hashtags = isDud ? '' : [...selectedBeads, currentLine].map(item => `#${item.replace(/ : /g, '_')}`).join(' ');
+        const finalHashtagItems = isDud ? [] : [...selectedBeads, ...combinationLines];
+        const hashtags = finalHashtagItems.map(item => `#${item.replace(/ : /g, '_')}`).join(' ');
         
         showResultModal(finalResultData, isDud, hashtags, selectedBeads);
     });
@@ -437,7 +441,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         : combination.line === line;
 
                     if (isLineMatch && areBeadsSame) {
-                        const hashtags = [...decodedBeads, line].map(item => `#${item.replace(/ : /g, '_')}`).join(' ');
+                        const allLines = Array.isArray(combination.lines) ? combination.lines : [combination.line];
+                        const hashtags = [...decodedBeads, ...allLines].map(item => `#${item.replace(/ : /g, '_')}`).join(' ');
                         showResultModal(combination.result, false, hashtags, decodedBeads);
                         break;
                     }
