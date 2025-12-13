@@ -1,0 +1,647 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 300; /* Light weight */
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.main-and-left-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    min-width: 0;
+}
+
+.left-panel {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: transparent;
+    backdrop-filter: none;
+    border-right: none;
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.right-panel {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+    flex-shrink: 0;
+    background-color: transparent;
+    border-left: 0.5px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+.main-area-wrapper {
+    display: flex;
+    flex-grow: 1;
+    gap: 10px;
+    min-height: 0;
+    background-color: transparent;
+}
+
+/* --- Box Style --- */
+.recipe-button,
+.gallery-button,
+.line-box,
+.plate-box,
+.item,
+.description,
+.good-match-button,
+.complete-button,
+.clear-button,
+.circle {
+    border: 0.5px solid black;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.main-screen {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    /* Background image properties */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 54.5%;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translate(-45px, 25px);
+    transition: all 0.3s ease;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: scale(1.05) translateX(3px);
+    animation: fadeIn 0.3s;
+}
+
+.plate-box {
+    width: 20%;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 120px;
+}
+
+.bead-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    position: absolute;
+    transition: opacity 0.3s, outline 0.3s, box-shadow 0.3s;
+}
+
+.bead-button.bead-selected {
+    opacity: 1;
+    outline: 2px solid rgb(255, 0, 0);
+    outline-offset: 0px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 3px rgba(255, 0, 0, 0.6);
+}
+
+.bead-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.item, .description, .good-match-button {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 0.5s;
+}
+
+.item, .description {
+    height: 35vh;
+    align-items: center;
+}
+
+.good-match-button {
+    flex-grow: 1;
+    align-items: center;
+}
+
+.item-text, .good-match-text {
+    font-size: 1.5em;
+    flex-shrink: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.item-image-container {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+}
+
+.item img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    animation: fadeIn 0.5s;
+}
+
+.description {
+    padding: 20px;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+#desc-name, #desc-attribute, #desc-text {
+    animation: fadeIn 0.5s;
+}
+
+#desc-name {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+#desc-attribute {
+    font-size: 1.1em;
+    color: #555;
+    font-style: italic;
+}
+
+#desc-text {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.recipe-button, .gallery-button, .complete-button, .clear-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.recipe-button, .gallery-button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.line-title {
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.line-box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.line-button {
+    width: 100%;
+    padding: 5px;
+    color: black;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row-reverse;
+    transition: background-color 0.3s ease;
+}
+
+.line-button img {
+    width: 60px;
+    height: 20px;
+}
+
+.line-button-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.line-button:hover {
+    background-color: rgba(228, 228, 228, 0.5);
+}
+
+.complete-button {
+    width: 20%;
+    align-self: flex-end;
+    margin-top: 10px;
+    font-size: 1.2em;
+    padding: 15px 10px;
+}
+
+.clear-button {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 100;
+    font-size: 1.2em;
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid #888;
+}
+
+.complete-button:hover, .clear-button:hover {
+    background-color: rgba(228, 228, 228, 0.5);
+}
+
+.good-match-text {
+    text-align: left;
+}
+
+.good-match-image-container {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.good-match-bead {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    animation: fadeIn 0.5s;
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    padding: 30px;
+    max-width: 80vw;
+    max-height: 80vh;
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    border: 0.5px solid black;
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+
+.modal-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(40%, -40%);
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* --- Result Modal New Layout --- */
+.result-modal-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.result-modal-content .result-title {
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.result-modal-content .result-year {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+    margin-top: -15px; /* Adjust spacing with title */
+}
+
+.result-subtitle {
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.result-modal-content .result-body {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.result-modal-content .result-left {
+    flex: 1 1 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-modal-content .result-right {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.result-modal-content .result-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.result-modal-content .result-hashtags {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    word-spacing: 10px;
+}
+
+.result-text-wrapper p {
+    font-size: 1em;
+    line-height: 1.5;
+    text-indent: 1em;
+    margin-bottom: 1em;
+}
+
+.result-modal-content .result-links-container {
+    margin-top: auto;
+    align-self: flex-end;
+    display: flex;
+    gap: 10px;
+}
+
+.result-modal-content .result-link img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* --- Dud Layout for Result Modal --- */
+.modal-content.dud-layout {
+    overflow: visible;
+    max-width: 50vw;
+    height: fit-content;
+    max-height: 90vh;
+}
+
+.dud-layout .result-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.dud-layout .result-text-wrapper p {
+    margin-bottom: 1em;
+    text-indent: 0; /* 미해금 멘트는 들여쓰기 제거 */
+}
+
+.dud-layout .result-hashtags {
+    display: none; /* 미해금 시 해시태그 숨김 */
+}
+
+.dud-layout .result-left,
+.dud-layout .result-right {
+    flex: none;
+    width: 100%;
+}
+
+.dud-layout .result-right {
+    align-items: center;
+}
+
+/* --- No Image Layout for Kkumjungdok/Hyeonghae --- */
+.no-image-layout .result-right {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.no-image-layout .result-links-container {
+    align-self: center;
+}
+
+/* --- Slider Styles --- */
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img,
+.slide video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* --- Recipe Modal Styles --- */
+.recipe-modal-content {
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.recipe-section {
+    margin-bottom: 20px;
+}
+
+.recipe-section h3 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.recipe-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.recipe-images {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.recipe-images img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.recipe-images .line-img {
+    width: 80px;
+    height: 26px;
+    border-radius: 0;
+}
+
+.recipe-images .bead-img {
+    border-radius: 50%;
+}
+
+.recipe-title {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+}
+
+.recipe-title:hover {
+    text-decoration: underline;
+}
