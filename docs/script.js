@@ -131,13 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (resultData.images.length > 1) {
                 const slides = resultData.images.map(src => {
                     const isVideo = src.endsWith('.mp4') || src.endsWith('.mov');
-                    return `<div class="slide">${isVideo ? `<video src="${src}" controls></video>` : `<img src="images/${src}" alt="${resultData.title}">`}</div>`;
+                    return `<div class="slide">${isVideo ? `<video src="${src}" controls></video>` : `<img src="${src}" alt="${resultData.title}">`}</div>`;
                 }).join('');
                 mediaHtml = `<div class="slider-container"><div class="slider-wrapper">${slides}</div><button class="slider-prev">&lt;</button><button class="slider-next">&gt;</button></div>`;
             } else {
                 const src = resultData.images[0];
                 const isVideo = src.endsWith('.mp4') || src.endsWith('.mov');
-                mediaHtml = isVideo ? `<video src="images/${src}" controls></video>` : `<img class="result-image" src="images/${src}" alt="${resultData.title}">`;
+                mediaHtml = isVideo ? `<video src="${src}" controls></video>` : `<img class="result-image" src="${src}" alt="${resultData.title}">`;
             }
         } else {
             mediaHtml = '';
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateGoodMatchBox('');
             } else {
                 currentLine = lineKey;
-                updateItemBox(lineImage.src, lineImage.alt, lineKey);
+                updateItemBox(`lines/${lineKey}.png`, lineImage.alt, lineKey);
                 updateGoodMatchBox(lineKey);
                 mainScreen.style.backgroundImage = `url('lines/${lineKey}.png')`;
             }
