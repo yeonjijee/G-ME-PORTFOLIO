@@ -61,6 +61,14 @@ body, html {
     background-color: transparent;
 }
 
+.main-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
 .right-panel {
     width: 20%;
     display: flex;
@@ -390,10 +398,9 @@ body, html {
 }
 
 .modal-close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(40%, -40%);
+    position: fixed;
+    top: 30px;
+    right: 30px;
     background-color: white;
     border: 1px solid black;
     border-radius: 50%;

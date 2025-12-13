@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const recipeButton = document.querySelector('.recipe-button');
     const completeButton = document.querySelector('.complete-button');
     const clearButton = document.getElementById('clear-button');
+    const mainTitle = document.querySelector('.main-title');
     const descName = document.getElementById('desc-name');
     const descAttribute = document.getElementById('desc-attribute');
     const descText = document.getElementById('desc-text');
@@ -22,6 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
         { element: mainCircles[0], beadSrc: null }, { element: mainCircles[1], beadSrc: null },
         { element: mainCircles[2], beadSrc: null }, { element: mainCircles[3], beadSrc: null }
     ];
+
+    // --- Core Functions ---
+    function resetPage() {
+        circleStates.forEach(state => {
+            state.element.innerHTML = '';
+            state.beadSrc = null;
+        });
+        currentLine = null;
+        mainScreen.style.backgroundImage = '';
+        updateItemBox('', '', '');
+        updateBeadSelectionState();
+        history.pushState(null, '', window.location.pathname);
+    }
 
     // --- Modal and UI Functions ---
     function showModal(innerHtml) {
@@ -117,13 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (resultData.images.length > 1) {
                 const slides = resultData.images.map(src => {
                     const isVideo = src.endsWith('.mp4') || src.endsWith('.mov');
-                    return `<div class="slide">${isVideo ? `<video src="${src}" controls></video>` : `<img src="${src}" alt="${resultData.title}">`}</div>`;
+                    return `<div class="slide">${isVideo ? `<video src="${src}" controls></video>` : `<img src="images/${src}" alt="${resultData.title}">`}</div>`;
                 }).join('');
                 mediaHtml = `<div class="slider-container"><div class="slider-wrapper">${slides}</div><button class="slider-prev">&lt;</button><button class="slider-next">&gt;</button></div>`;
             } else {
                 const src = resultData.images[0];
                 const isVideo = src.endsWith('.mp4') || src.endsWith('.mov');
-                mediaHtml = isVideo ? `<video src="${src}" controls></video>` : `<img class="result-image" src="${src}" alt="${resultData.title}">`;
+                mediaHtml = isVideo ? `<video src="images/${src}" controls></video>` : `<img class="result-image" src="images/${src}" alt="${resultData.title}">`;
             }
         } else {
             mediaHtml = '';
@@ -244,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Event Listeners ---
+    mainTitle.addEventListener('click', resetPage);
+    clearButton.addEventListener('click', resetPage);
+
     beadButtons.forEach(button => {
         button.addEventListener('click', () => {
             const beadImage = button.querySelector('img');
@@ -360,18 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         showModal(recipeModalContent);
-    });
-
-    clearButton.addEventListener('click', () => {
-        circleStates.forEach(state => {
-            state.element.innerHTML = '';
-            state.beadSrc = null;
-        });
-        currentLine = null;
-        mainScreen.style.backgroundImage = '';
-        updateItemBox('', '', '');
-        updateBeadSelectionState();
-        history.pushState(null, '', window.location.pathname);
     });
 
     completeButton.addEventListener('click', () => {
