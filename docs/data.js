@@ -76,7 +76,7 @@ export const completionData = [
         { 
             title: '철학좀비', 
             year: 2025,
-            images: ['images/철학좀비01.png', 'images/철학좀비02.png'], 
+            images: ['images/zombie01.png', 'images/zombie02.png'], 
             text: '<p>데이비드 차머스의 \'철학좀비\'라는 개념을 아는가?</p> <p>\'철학좀비\'는 물리적 행동은 인간과 같지만 내면의 의식이 없는 존재를 말한다.</p> <p>철학좀비의 개념과 AI가 매우 유사하다는 사실을 발견하고 연구를 시작하게 되었다.</p> <p>인간들조차 답하기 어렵고, 정답이 무엇인지 밝혀지지 않은 난제를 과연 AI는 어떻게 판단할까?</p> <p>인간의 손에서 나온 인공적인 존재를 인터뷰하며, 마지막 테스트를 통해 참여자는 오히려 자기 자신에 대해 알아가는 경험을 얻는다.</p>', 
             link: ['https://www.instagram.com/aec_laboratory/', 'https://www.notion.so/Interviewing-Artificial-Intelligence-1ece5b01d52b80d0a188db82a03b3fe4?source=copy_link']
         } 
@@ -88,7 +88,7 @@ export const completionData = [
         { 
             title: '구의 증명', 
             year: 2022,
-            images: ['images/구의증명01.jpg', 'images/구의증명02.jpg', 'images/구의증명00.jpg', 'images/구의증명.mp4'], 
+            images: ['images/gu01.jpg', 'images/gu02.jpg', 'images/gu00.jpg', 'images/gu.mp4'], 
             text: '최진영 - 구의증명 \n opening sequance', 
             link: 'https://www.instagram.com/p/CmYQlKQjVSR/' 
         } 
@@ -100,7 +100,7 @@ export const completionData = [
         { 
             title: '두꺼비집', 
             year: 2023,
-            images: ['images/두꺼비집01.jpg', 'images/두꺼비집02.jpg', 'images/두꺼비집.mp4'], 
+            images: ['images/toadhouse01.jpg', 'images/toadhouse02.jpg', 'images/toadhouse.mp4'], 
             text: '<p>두꺼비집 - 김필선</p> <p>어떠한 존재로 인해 사랑을 경험하고 정신적 성장을 거쳐 마음의 벽을 열고 나오는 과정, 그 안에서 헤메고 괴로운 경험도 있지만 아픔을 딛고 단단해지는 소녀의 이야기.</p> <p>베일과 거울은 마음의 벽과 타인의 시선을 의미한다.</p><p>나 스스로를 내비치지 못했던 소녀가 점차 베일을 벗고 조금씩이지만 자신 본연의 모습을 드러내는 계기의 발판을 담았다.</p>  <p>Music Video.</p>', 
             link: 'https://www.instagram.com/p/C0RXJdSJ54-/' 
         } 
@@ -112,7 +112,7 @@ export const completionData = [
         { 
             title: '당신은 무엇으로 이루어져 있나요', 
             year: 2024,
-            images: ['images/당신은01.png', 'images/당신은02.png', 'images/당신은03.png', 'images/당신은04.png'], 
+            images: ['images/whoareyou01.png', 'images/whoareyou02.png', 'images/whoareyou03.png', 'images/whoareyou04.png'], 
             text: '<p>인간의 본성에는 자아실현이라는 것이 있다.</p> <p>나다운 것.</p> <p>타인과 본인의 분리 또는 동질감 형성을 위해 분석하고 분리하고 수집하고 정리한다.</p> <p>한 사람을 한 단어로 설명하고 한눈에 이해하기 위해 혈액형에 특성을 부여하고 mbti를 검사한다.</p> <p>본 작품의 의도 또한 이와 같다. 나라는 사람을 보다 개인적이고 표면적인 방법으로 시각화한 작품이다.</p> <p>우리를 이루는 취향은 우리가 소유하는 물질로 나타난다.</p><p> 오랜 시간 소중히 간직한 애착품, 편안하고 유용하다고 생각한 사용품, 방안에 굴러다니던 잡동사니.</p> <p>우리의 생활 속에 존재하는 수많은 선택지 속 무의식적으로 선택한 물질의 작은 파현들을 모아 하나의 덩어리를 만들면 그 사람의 취향을 알 수 있고, 색을 볼 수 있고, 가치관을 배울 수 있다.</p> <p>작품 내에는 약 80여개의 소유물로 덩어리가 이루어져있다.</p> <p>작품을 보는 당신은 어떤 사람을 보고 있는가.</p> <p>당신은 무엇으로 이루어져 있는가.</p>', 
             link: 'https://www.instagram.com/p/DCJu1k9ybSG/' 
         } 
@@ -124,7 +124,7 @@ export const completionData = [
         { 
             title: '나의 세계', 
             year: 2022,
-            images: ['images/나의세계.jpg', 'images/나의세계.mp4'], 
+            images: ['images/myworld.jpg', 'images/myworld.mp4'], 
             text: '<p>[나의 세계]</p> <p>나는 왜 잠이 안올까. 오늘도 잠에 들지 못한다.</p> <p>푸르스름한 새벽에 눈을 뜨면 또다른 환상적인 새로운 세계가 머릿속에서 펼쳐진다.</p> <p>상상의 나래를 펼치다 까무룩 잠에 들면 또다시 밝아오는 아침.</p>', 
             link: 'https://www.instagram.com/p/CkLvLyqDyqw/' 
         } 
@@ -147,7 +147,7 @@ export const completionData = [
         { 
             title: '형해', 
             year: 2025,
-            text: '어느 날 학교에 불시착한 외계인. 외계인은 그를 도와준 세 명의 대학생 나빈, 소라, 상록에게 우주 여행을 권한다. 둘은 거절했으나 나빈은 그를 따라 우주로 나가겠다고 하며 별안간 의식 불명의 상태가 되는데...', 
+            text: '<p>어느 날 학교에 불시착한 외계인. 외계인은 그를 도와준 세 명의 대학생 나빈, 소라, 상록에게 우주 여행을 권한다. 둘은 거절했으나 나빈은 그를 따라 우주로 나가겠다고 하며 별안간 의식 불명의 상태가 되는데...</p><p>형해는 청춘이 겪는 실존적 위기를 외계인이라는 초현실적 소재로 풀어낸 소설이다. 미대생의 일상 속에 현대 청년들이 마주하는 정체성의 혼란과 관계의 상실, 본질에 대한 물음을 담고있다.</p><p>제목인 형해(形骸)는 생명이 빠져나간 빈 껍데기를 의미한다. 살아가면서 추구하는 삶의 형식과 진정한 본질 사이의 괴리감을 표현하고 있다. 병원에 있는 나빈이의 육체는 영혼 없는 형해이고, 힘들 때마다 회피하고 숨어버리는 상록이의 모습도 형해이다. 주인공 소라의 디자인 작업들도 본질 없는 형해가 될 위험을 안고 있다.</p><p>외계인의 등장은 단순한 SF적 장치가 아니라 고정관념의 전복을 상징한다. 우주여행이 하늘이 아닌 땅속으로 이어지고, 영혼이 육체를 떠나 자유롭게 여행할 수 있다는 설정은 우리가 당연하게 받아들이는 모든 것에 의문을 던진다. 소라가 이를 졸업 작품의 주제로 삼는 것은 예술가로서의 자각이자, 삶에 대한 새로운 시각을 얻었다는 증거이다.</p><p>무엇보다 이 작품은 우정에 관한 이야기다. 소라, 나빈, 상록 세 사람의 관계는 작품 전체를 관통하며, 결국 전시장을 빠져나와 함께 담배를 피우는 마지막 장면에서 "세 개의 형태"가 나란히 서있는 모습은 형해를 넘어선 본질적 연대를 보여준다. "얻고 잃은 모든 것들을 차치하고, 결국 올해는 남은 것이 있었다"는 깨달음. 아무리 힘든 시간을 겪어도, 곁에 남아있는 사람들이야말로 우리 삶의 진정한 본질이라는 것이다.</p>', 
             link: 'https://www.notion.so/2bfe5b01d52b805ebfc1d0ba3ef54266?source=copy_link' 
         } 
     },
@@ -158,7 +158,7 @@ export const completionData = [
         { 
             title: 'pickihookie', 
             year: 2023,
-            images: ['images/피키후키01.jpg', 'images/피키후키02.png', 'images/피키후키03.png', 'images/피키후키04.png', 'images/피키후키05.jpeg', 'images/피키후키06.png', 'images/피키후키08.png', 'images/피키후키09.png'], 
+            images: ['images/pickihookie01.jpg', 'images/pickihookie02.png', 'images/pickihookie03.png', 'images/pickihookie04.png', 'images/pickihookie05.jpeg', 'images/pickihookie06.png', 'images/pickihookie08.png', 'images/pickihookie09.png'], 
             text: 
             '<p>Brand Design Project</p> <p>chocker brand</p>' ,
             link: 'https://www.instagram.com/pickihookie.official/' 
@@ -171,7 +171,7 @@ export const completionData = [
         { 
             title: '제저벨',
             year: 2023, 
-            images: ['images/제저벨.png'],
+            images: ['images/jezebel.png'],
             text: '<p>듀나의 장편소설 <<제저벨>> 시각화 작업.</p> <p>주요 키워드를 분석해 페이지 별 언급 위치 및 횟수를 기준으로 분석한 인포그래픽 포스터.</p>',
             link: 'https://www.instagram.com/p/C1s7X2_o3T9/'
         }
@@ -183,7 +183,7 @@ export const completionData = [
         { 
             title: '한국경제 : 신문을 읽는 가장 작은 단위',
             year: 2025, 
-            images: ['images/한국경제01.png','images/한국경제02.png','images/한국경제03.png','images/한국경제04.png','images/한국경제05.png','images/한국경제06.png','images/한국경제07.png','images/한국경제08.png','images/한국경제09.png','images/한국경제10.png','images/한국경제11.png','images/한국경제12.png','images/한국경제13.png','images/한국경제14.png','images/한국경제15.png','images/한국경제16.png'],
+            images: ['images/koreconomy01.png','images/koreconomy02.png','images/koreconomy03.png','images/koreconomy04.png','images/koreconomy05.png','images/koreconomy06.png','images/koreconomy07.png','images/koreconomy08.png','images/koreconomy09.png','images/koreconomy10.png','images/koreconomy11.png','images/koreconomy12.png','images/koreconomy13.png','images/koreconomy14.png','images/koreconomy15.png','images/koreconomy16.png'],
             text: '2025-02-25 발행한 한국경제 신문의 A1면 ~ A16면을 기존 레이아웃에 대하여 분석 - 해체 - 재구성하여 제작한 인쇄물.',
             link: 'https://www.hankyung.com/'
         }
@@ -207,7 +207,7 @@ export const completionData = [
         { 
             title: '데모크라시',
             year: 2024,
-            images: ['images/데모크라시01.jpg', 'images/데모크라시02.jpg', 'images/데모크라시03.jpg'],
+            images: ['images/democracy01.jpg', 'images/democracy02.jpg', 'images/democracy03.jpg'],
             text: '<p>직접 디자인한 폰트 Jeeji01로 제작한 타이포그래피.</p> <P>민주주의란 어디에서 오는가.</P>',
             link: 'https://www.instagram.com/p/DDSR7zWSwLC/'
         }
@@ -231,7 +231,7 @@ export const completionData = [
         { 
             title: '배우 프로필',
             year: 2025,
-            images: ['images/프로필01.png', 'images/프로필02.png', 'images/프로필03.png'],
+            images: ['images/profile01.png', 'images/profile02.png', 'images/profile03.png'],
             text: '배우 정세연 이미지 프로필',
             link: 'https://www.instagram.com/p/DMeHZJzziQ1/?img_index=1'
         }
@@ -244,10 +244,10 @@ export const completionData = [
             title: '마녀사냥', 
             year: 2023,
             images: [
-                'images/마녀사냥01.png', 'images/마녀사냥02.png', 'images/마녀사냥03.png', 
-                'images/마녀사냥04.png', 'images/마녀사냥05.png', 'images/마녀사냥06.png', 
-                'images/마녀사냥07.png', 'images/마녀사냥08.png', 'images/마녀사냥09.png', 
-                'images/마녀사냥10.png'
+                'images/witchhunt01.png', 'images/witchhunt02.png', 'images/witchhunt03.png', 
+                'images/witchhunt04.png', 'images/witchhunt05.png', 'images/witchhunt06.png', 
+                'images/witchhunt07.png', 'images/witchhunt08.png', 'images/witchhunt09.png', 
+                'images/witchhunt10.png'
             ], 
             text: '<p>최제훈, 『퀴르발 남작의 성』 </p> <p>: 마녀의 스트레오타입에 대한 고찰 - 휘뚜루마뚜루 세계사 1</p> <p>최제훈 작가의 단편집에 나오는 스토리를 담았다.</p> <p>본 대사는 작중 ‘헤카테’라는 그리스 신화에 나오는 마법의 여신의 대사이다.</p> <p>마녀란 무엇인가?</p> <p>마녀는 아니지만 누구든지 손가락질만 하면 불태울 수 있는 마술.</p><p>그리고 언제든지 입장이 바뀔 수 있다는 아이러니함을 담았다.</p>',
             link: ['https://yeonjijee.github.io/-/']
@@ -260,7 +260,7 @@ export const completionData = [
         { 
             title: '고양이',
             year: 2023,
-            images: ['images/고양이01.png', 'images/고양이02.png', 'images/고양이05.png',  'images/고양이07.png'],
+            images: ['images/cat01.png', 'images/cat02.png', 'images/cat05.png',  'images/cat07.png'],
             text: '동네 터줏대감들.',
             link: 'https://www.instagram.com/ee_j.film/'
         }
@@ -272,7 +272,7 @@ export const completionData = [
         { 
             title: '불티',
             year: 2023,
-            images: ['images/불01.png', 'images/불02.png','images/불03.png','images/불04.png','images/불05.png','images/불06.png'],
+            images: ['images/spark01.png', 'images/spark02.png','images/spark03.png','images/spark04.png','images/spark05.png','images/spark06.png'],
             text: '<p>꺼지지 않는 불에서 피어나는 불티가 되어야겠다.</p><p>하늘 높이 날아가 나를 다 태워가며 그림 그리도록.</p>',
             link: 'https://www.instagram.com/p/C1s7s2MoxMF/'
         }
@@ -284,7 +284,7 @@ export const completionData = [
         { 
             title: '순수',
             year: 2023,
-            images: ['images/순수01.png', 'images/순수02.png','images/순수03.png','images/순수04.png','images/순수05.png','images/순수06.png', 'images/순수08.JPG','images/순수10.JPG','images/순수11.png','images/순수12.png','images/순수13.png','images/순수15.png'],
+            images: ['images/pure01.png', 'images/pure02.png','images/pure03.png','images/pure04.png','images/pure05.png','images/pure06.png', 'images/pure08.png','images/pure10.png','images/pure11.png','images/pure12.png','images/pure13.png','images/pure15.png'],
             text: '<p>순수한 마음 그대로를 담아보고 싶었다.</p>',
             link: 'https://www.instagram.com/ee_j.film/'
         }
@@ -296,7 +296,7 @@ export const completionData = [
         { 
             title: '자유',
             year: 2024,
-            images: ['images/자유01.png', 'images/자유04.png', 'images/자유07.png', 'images/자유08.png', 'images/자유10.png','images/자유12.png','images/자유13.png','images/자유16.png','images/자유17.png','images/자유18.png'],
+            images: ['images/freedom01.png', 'images/freedom04.png', 'images/freedom07.png', 'images/freedom08.png', 'images/freedom10.png','images/freedom12.png','images/freedom13.png','images/freedom16.png','images/freedom17.png','images/freedom18.png'],
             text: '스스럼 없는 그대의 자유는 무엇을 담고 있는가.',
             link: 'https://www.instagram.com/p/C_45J-YT_Ui/?img_index=1'
         }
