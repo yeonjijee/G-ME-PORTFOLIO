@@ -532,6 +532,11 @@ body, html {
     align-self: center;
 }
 
+.no-image-layout .result-text-wrapper p {
+    text-align: center;
+    text-indent: 0;
+}
+
 /* --- Slider Styles --- */
 .slider-container {
     width: 100%;

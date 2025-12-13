@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentLine = lineKey;
                 updateItemBox(lineImage.src, lineImage.alt, lineKey);
                 updateGoodMatchBox(lineKey);
-                mainScreen.style.backgroundImage = `url('${lineImage.src}')`;
+                mainScreen.style.backgroundImage = `url('lines/${lineKey}.png')`;
             }
         });
     });
@@ -371,6 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainScreen.style.backgroundImage = '';
         updateItemBox('', '', '');
         updateBeadSelectionState();
+        history.pushState(null, '', window.location.pathname);
     });
 
     completeButton.addEventListener('click', () => {
