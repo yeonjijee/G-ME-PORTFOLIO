@@ -321,13 +321,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const regularRecipes = completionData.filter(p => !p.dud && !p.beads.includes('blank'));
         const easterEggRecipes = completionData.filter(p => !p.dud && p.beads.includes('blank'));
 
-        const createRecipeSectionHTML = (title, recipes) => {
+        const createRecipeSectionHTML = (title, recipes, isEasterEgg) => {
             if (recipes.length === 0) return '';
             
             const rows = recipes.map(p => {
                 const lineKey = Array.isArray(p.lines) ? p.lines[0] : p.line;
                 const lineImg = `<img src="lines/${lineKey}.png" alt="${lineKey}" class="line-img">`;
-                const beadImgs = p.beads.map(bead => `<img src="beads/${bead}.png" alt="${bead}" class="bead-img">`).join('');
+                
+                let beads = p.beads;
+                if (isEasterEgg) {
+                    const blanks = beads.filter(b => b === 'blank');
+                    const others = beads.filter(b => b !== 'blank');
+                    beads = [...others, ...blanks];
+                }
+                const beadImgs = beads.map(bead => `<img src="beads/${bead}.png" alt="${bead}" class="bead-img">`).join('');
+
                 const titleHtml = `<div class="recipe-title">${p.result.title}</div>`;
                 
                 return `<a href="index.html?line=${encodeURIComponent(lineKey)}&beads=${encodeURIComponent(JSON.stringify(p.beads))}" class="recipe-row">
@@ -340,8 +348,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return `<div class="recipe-section"><h3>${title}</h3>${rows}</div>`;
         };
 
-        const regularHtml = createRecipeSectionHTML('Recipes', regularRecipes);
-        const easterEggHtml = createRecipeSectionHTML('Easter Eggs', easterEggRecipes);
+        const regularHtml = createRecipeSectionHTML('Recipes', regularRecipes, false);
+        const easterEggHtml = createRecipeSectionHTML('Easter Eggs', easterEggRecipes, true);
 
         const recipeModalContent = `
             <div class="modal-content recipe-modal-content">

@@ -28,6 +28,16 @@ body {
     position: relative;
     aspect-ratio: 1 / 1; /* Make items square */
     background-color: #f0f0f0;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    background-color: #e0e0e0;
 }
 
 .gallery-item img {
@@ -58,4 +68,11 @@ body {
 
 .gallery-item:hover .title-overlay {
     opacity: 1;
+}
+
+.gallery-item.text-only {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 10px;
+    text-align: center;
 }
