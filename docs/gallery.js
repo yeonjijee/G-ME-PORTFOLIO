@@ -7,12 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const uniqueProjects = {};
 
+    // De-duplicate projects based on title
     completionData.forEach(project => {
         if (project.dud || !project.result.images || project.result.images.length === 0) {
             return;
         }
-        
-        // Use title as the key to identify unique projects
         const title = project.result.title;
         if (!uniqueProjects[title]) {
             uniqueProjects[title] = project;

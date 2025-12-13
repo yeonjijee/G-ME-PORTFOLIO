@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (matches) {
             matches.forEach(matchKey => {
                 const matchImg = document.createElement('img');
-                matchImg.src = `구슬/${matchKey}.png`;
+                matchImg.src = `beads/${matchKey}.png`;
                 matchImg.classList.add('good-match-bead');
                 goodMatchImageContainer.appendChild(matchImg);
             });
@@ -326,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const rows = recipes.map(p => {
                 const lineKey = Array.isArray(p.lines) ? p.lines[0] : p.line;
-                const lineImg = `<img src="라인/${lineKey}.png" alt="${lineKey}" class="line-img">`;
-                const beadImgs = p.beads.map(bead => `<img src="구슬/${bead}.png" alt="${bead}" class="bead-img">`).join('');
+                const lineImg = `<img src="lines/${lineKey}.png" alt="${lineKey}" class="line-img">`;
+                const beadImgs = p.beads.map(bead => `<img src="beads/${bead}.png" alt="${bead}" class="bead-img">`).join('');
                 const titleHtml = `<div class="recipe-title">${p.result.title}</div>`;
                 
                 return `<a href="index.html?line=${encodeURIComponent(lineKey)}&beads=${encodeURIComponent(JSON.stringify(p.beads))}" class="recipe-row">
