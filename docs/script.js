@@ -1,4 +1,4 @@
-import { completionData } from './data.js';
+import { itemData, goodMatchData, dudBeadMessages, completionData } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- Element Selectors ---
@@ -318,22 +318,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     recipeButton.addEventListener('click', () => {
-        const regularRecipes = completionData.filter(p => !p.dud && !p.easterEgg);
-        const easterEggRecipes = completionData.filter(p => !p.dud && p.easterEgg);
+        const regularRecipes = completionData.filter(p => !p.dud && !p.beads.includes('blank'));
+        const easterEggRecipes = completionData.filter(p => !p.dud && p.beads.includes('blank'));
 
         const createRecipeSectionHTML = (title, recipes) => {
             if (recipes.length === 0) return '';
             
             const rows = recipes.map(p => {
-                const lineImg = `<img src="라인/${p.line}.png" alt="${p.line}" class="line-img">`;
+                const lineKey = Array.isArray(p.lines) ? p.lines[0] : p.line;
+                const lineImg = `<img src="라인/${lineKey}.png" alt="${lineKey}" class="line-img">`;
                 const beadImgs = p.beads.map(bead => `<img src="구슬/${bead}.png" alt="${bead}" class="bead-img">`).join('');
-                const titleLink = `<a href="index.html?line=${encodeURIComponent(p.line)}&beads=${encodeURIComponent(JSON.stringify(p.beads))}" class="recipe-title">${p.result.title}</a>`;
+                const titleHtml = `<div class="recipe-title">${p.result.title}</div>`;
                 
-                return `<div class="recipe-row">
+                return `<a href="index.html?line=${encodeURIComponent(lineKey)}&beads=${encodeURIComponent(JSON.stringify(p.beads))}" class="recipe-row">
                             <div class="recipe-images">${lineImg}${beadImgs}</div>
                             <span>→</span>
-                            ${titleLink}
-                        </div>`;
+                            ${titleHtml}
+                        </a>`;
             }).join('');
 
             return `<div class="recipe-section"><h3>${title}</h3>${rows}</div>`;
@@ -382,8 +383,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (const combination of completionData) {
             if (combination.dud) continue;
+            
             const areBeadsSame = JSON.stringify(combination.beads) === JSON.stringify(sortedSelectedBeads);
-            if (combination.line === currentLine && areBeadsSame) {
+            const isLineMatch = Array.isArray(combination.lines)
+                ? combination.lines.includes(currentLine)
+                : combination.line === currentLine;
+
+            if (isLineMatch && areBeadsSame) {
                 resultData = combination.result;
                 matchFound = true;
                 break;
@@ -410,8 +416,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 for (const combination of completionData) {
                     if (combination.dud) continue;
+
                     const areBeadsSame = JSON.stringify(combination.beads) === JSON.stringify(sortedSelectedBeads);
-                    if (combination.line === line && areBeadsSame) {
+                    const isLineMatch = Array.isArray(combination.lines)
+                        ? combination.lines.includes(line)
+                        : combination.line === line;
+
+                    if (isLineMatch && areBeadsSame) {
                         const hashtags = [...decodedBeads, line].map(item => `#${item.replace(/ : /g, '_')}`).join(' ');
                         showResultModal(combination.result, false, hashtags, decodedBeads);
                         break;

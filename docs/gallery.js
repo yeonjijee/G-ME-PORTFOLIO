@@ -5,36 +5,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!galleryGrid) return;
 
+    const uniqueProjects = {};
+
     completionData.forEach(project => {
-        // Skip dud projects and projects with no images
         if (project.dud || !project.result.images || project.result.images.length === 0) {
             return;
         }
-
-        const thumbnailSrc = project.result.images[0];
+        
+        // Use title as the key to identify unique projects
         const title = project.result.title;
+        if (!uniqueProjects[title]) {
+            uniqueProjects[title] = project;
+        }
+    });
 
-        // Create the link element
+    for (const title in uniqueProjects) {
+        const project = uniqueProjects[title];
+        const thumbnailSrc = project.result.images[0];
+
         const link = document.createElement('a');
-        const lineParam = encodeURIComponent(project.line);
+        
+        // If there are multiple lines, use the first one for the link.
+        const lineKey = Array.isArray(project.lines) ? project.lines[0] : project.line;
+        const lineParam = encodeURIComponent(lineKey);
         const beadsParam = encodeURIComponent(JSON.stringify(project.beads));
+        
         link.href = `index.html?line=${lineParam}&beads=${beadsParam}`;
         link.className = 'gallery-item';
 
-        // Create the image element
         const img = document.createElement('img');
         img.src = thumbnailSrc;
         img.alt = title;
-        img.loading = 'lazy'; // Lazy load images for performance
+        img.loading = 'lazy';
 
-        // Create the title overlay
         const titleOverlay = document.createElement('div');
         titleOverlay.className = 'title-overlay';
         titleOverlay.textContent = title;
 
-        // Append elements
         link.appendChild(img);
         link.appendChild(titleOverlay);
         galleryGrid.appendChild(link);
-    });
+    }
 });
