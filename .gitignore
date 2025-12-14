@@ -1,0 +1,16 @@
+# macOS system files
+.DS_Store
+*.tmp
+
+# Large media files
+*.ai
+*.pdf
+*.psd
+*.heic
+*.mp4
+*.mov
+*.png
+*.jpg
+
+# Other application files
+*.numbers

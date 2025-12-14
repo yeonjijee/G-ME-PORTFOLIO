@@ -220,7 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (matches) {
             matches.forEach(matchKey => {
                 const matchImg = document.createElement('img');
-                matchImg.src = `beads/${matchKey}.png`;
+                const imgSrc = matchKey.includes(' : ') ? `lines/${matchKey}.png` : `beads/${matchKey}.png`;
+                matchImg.src = imgSrc;
                 matchImg.classList.add('good-match-bead');
                 goodMatchImageContainer.appendChild(matchImg);
             });
@@ -338,6 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const regularRecipes = completionData.filter(p => !p.dud && !p.beads.includes('blank'));
         const easterEggRecipes = completionData.filter(p => !p.dud && p.beads.includes('blank'));
 
+        regularRecipes.sort((a, b) => a.result.year - b.result.year);
+        easterEggRecipes.sort((a, b) => a.result.year - b.result.year);
+
         const createRecipeSectionHTML = (title, recipes, isEasterEgg) => {
             if (recipes.length === 0) return '';
             
@@ -366,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return `<div class="recipe-section"><h3>${title}</h3>${rows}</div>`;
         };
 
-        const regularHtml = createRecipeSectionHTML('Recipes', regularRecipes, false);
+        const regularHtml = createRecipeSectionHTML('Stendard', regularRecipes, false);
         const easterEggHtml = createRecipeSectionHTML('Easter Eggs', easterEggRecipes, true);
 
         const recipeModalContent = `
@@ -456,4 +460,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(randomizePositions, 100);
     window.addEventListener('resize', randomizePositions);
     handleUrlParams();
+
+    if (window.innerWidth < 768) {
+        const warningOverlay = document.getElementById('mobile-warning-overlay');
+        warningOverlay.style.display = 'flex';
+
+        document.getElementById('close-mobile-warning').addEventListener('click', () => {
+            warningOverlay.style.display = 'none';
+        });
+    }
 });
