@@ -25,27 +25,26 @@ export const itemData = {
 };
 
 export const goodMatchData = {
-    'ai': ['book', 'philosophy', 'word', 'black', 'hand'],
-    'beads': ['camera', 'hand', 'black', 'magenta', 'blue', 'star'],
-    'black': ['camera', 'beads', 'hand', 'word', 'sf', 'ai', 'magenta', 'blank', 'music', 'book'],
-    'blue': ['camera', 'beads', 'star', 'word', 'hand', 'blank'],
-    'book': ['ai', 'philosophy', 'word', 'camera', 'hand', 'star', 'sf', 'woman', 'dream', 'blank', 'black'],
-    'camera': ['book', 'hand', 'star', 'music', 'yellow', 'woman', 'beads', 'black', 'magenta', 'blue', 'sf', 'dream', 'blank'],
-    'dream': ['book', 'word', 'woman', 'camera', 'yellow', 'blank'],
-    'hand': ['book', 'camera', 'star', 'beads', 'black', 'magenta', 'word', 'blue', 'blank', 'ai'],
-    'magenta': ['camera', 'beads', 'hand', 'woman', 'yellow', 'black'],
-    'music': ['camera', 'yellow', 'woman', 'word', 'black', 'blank'],
-    'philosophy': ['ai', 'book', 'word'],
-    'sf': ['book', 'word', 'woman', 'black', 'camera', 'blank'],
-    'star': ['book', 'camera', 'hand', 'beads', 'blue', 'woman', 'blank'],
-    'woman': ['music', 'camera', 'yellow', 'book', 'word', 'sf', 'star', 'dream', 'magenta', 'hand'],
-    'word': ['ai', 'book', 'philosophy', 'sf', 'woman', 'dream', 'blue', 'hand', 'blank', 'black', 'music'],
-    'yellow': ['music', 'camera', 'woman', 'dream', 'blank'],
-    'blank': ['word', 'blue', 'hand', 'music', 'black', 'book', 'camera', 'yellow', 'dream', 'star', 'woman', 'sf', 'magenta'],
-    'Web : Interactive': ['ai', 'book', 'philosophy', 'word'],
-    'Document : Print': ['ai', 'book', 'philosophy', 'word', 'camera', 'beads', 'hand', 'black', 'magenta', 'sf', 'woman', 'dream'],
-    'Image : Still Visual': ['camera', 'beads', 'hand', 'magenta', 'blue', 'star'],
-    'Video : Motion': ['book', 'camera', 'hand', 'star', 'yellow', 'woman', 'beads', 'magenta']
+    'ai': ['book', 'philosophy', 'word', 'black', 'hand', 'Document : Print', 'Web : Interactive'],
+    'beads': ['camera', 'hand', 'black', 'magenta', 'blue', 'star', 'Document : Print', 'Image : Still Visual', 'Video : Motion'],
+    'black': ['camera', 'beads', 'hand', 'word', 'sf', 'ai', 'magenta', 'music', 'book', 'Document : Print'],
+    'blue': ['camera', 'beads', 'star', 'word', 'hand', 'Video : Motion', 'Document : Print'],
+    'book': ['ai', 'philosophy', 'word', 'camera', 'hand', 'star', 'sf', 'woman', 'dream', 'black','Document : Print', 'Video : Motion', 'Web : Interactive'],
+    'camera': ['book', 'hand', 'star', 'music', 'yellow', 'woman', 'beads', 'black', 'magenta', 'blue', 'sf', 'dream', 'Document : Print', 'Image : Still Visual', 'Video : Motion'],
+    'dream': ['book', 'word', 'woman', 'camera', 'yellow', 'Image : Still Visual'],
+    'hand': ['book', 'camera', 'star', 'beads', 'black', 'magenta', 'word', 'blue', 'ai', 'Document : Print', 'Image : Still Visual', 'Video : Motion'],
+    'magenta': ['camera', 'beads', 'hand', 'woman', 'yellow', 'black', 'Document : Print', 'Image : Still Visual'],
+    'music': ['camera', 'yellow', 'woman', 'word', 'black', 'Video : Motion', 'Document : Print'],
+    'philosophy': ['ai', 'book', 'word', 'Document : Print', 'Web : Interactive'],
+    'sf': ['book', 'word', 'woman', 'black', 'camera', 'Document : Print', 'Image : Still Visual'],
+    'star': ['book', 'camera', 'hand', 'beads', 'blue', 'woman', 'Video : Motion', 'Image : Still Visual'],
+    'woman': ['music', 'camera', 'yellow', 'book', 'word', 'sf', 'star', 'dream', 'magenta', 'hand', 'Document : Print', 'Video : Motion', 'Image : Still Visual'],
+    'word': ['ai', 'book', 'philosophy', 'sf', 'woman', 'dream', 'blue', 'hand', 'black', 'music','Document : Print', 'Web : Interactive'],
+    'yellow': ['music', 'camera', 'woman', 'dream', 'Video : Motion', 'Image : Still Visual'],
+    'Web : Interactive': ['ai', 'book', 'philosophy', 'word', 'black'],
+    'Document : Print': ['ai', 'book', 'philosophy', 'word', 'camera', 'beads', 'hand', 'black', 'magenta', 'sf', 'woman', 'dream', 'blue', 'music'],
+    'Image : Still Visual': ['camera', 'beads', 'hand', 'magenta', 'woman','yellow', 'black', 'dream', 'star'],
+    'Video : Motion': ['book', 'camera', 'hand', 'star','music','blue', 'yellow', 'woman', 'beads', 'magenta']
 };
 
 export const dudBeadMessages = {
@@ -77,7 +76,7 @@ export const completionData = [
             title: '철학좀비', 
             year: 2025,
             images: ['images/zombie01.png', 'images/zombie02.png'], 
-            text: '<p>데이비드 차머스의 \'철학좀비\'라는 개념을 아는가?</p> <p>\'철학좀비\'는 물리적 행동은 인간과 같지만 내면의 의식이 없는 존재를 말한다.</p> <p>철학좀비의 개념과 AI가 매우 유사하다는 사실을 발견하고 연구를 시작하게 되었다.</p> <p>인간들조차 답하기 어렵고, 정답이 무엇인지 밝혀지지 않은 난제를 과연 AI는 어떻게 판단할까?</p> <p>인간의 손에서 나온 인공적인 존재를 인터뷰하며, 마지막 테스트를 통해 참여자는 오히려 자기 자신에 대해 알아가는 경험을 얻는다.</p>', 
+            text: '<p>데이비드 차머스의 \'철학좀비\'라는 개념을 아는가?</p> <p>\'철학좀비\'는 물리적 행동은 인간과 같지만 내면의 의식이 없는 존재를 말한다. 철학좀비의 개념과 AI가 매우 유사하다는 사실을 발견하고 연구를 시작하게 되었다. 인간들조차 답하기 어렵고, 정답이 무엇인지 밝혀지지 않은 난제를 과연 AI는 어떻게 판단할까? 인간의 손에서 나온 인공적인 존재를 인터뷰하며, 마지막 테스트를 통해 참여자는 오히려 자기 자신에 대해 알아가는 경험을 얻는다.</p>', 
             link: ['https://www.instagram.com/aec_laboratory/', 'https://www.notion.so/Interviewing-Artificial-Intelligence-1ece5b01d52b80d0a188db82a03b3fe4?source=copy_link']
         } 
     },
@@ -101,7 +100,7 @@ export const completionData = [
             title: '두꺼비집', 
             year: 2023,
             images: ['images/toadhouse01.jpg', 'images/toadhouse02.jpg', 'images/toadhouse.mp4'], 
-            text: '<p>두꺼비집 - 김필선</p> <p>어떠한 존재로 인해 사랑을 경험하고 정신적 성장을 거쳐 마음의 벽을 열고 나오는 과정, 그 안에서 헤메고 괴로운 경험도 있지만 아픔을 딛고 단단해지는 소녀의 이야기.</p> <p>베일과 거울은 마음의 벽과 타인의 시선을 의미한다.</p><p>나 스스로를 내비치지 못했던 소녀가 점차 베일을 벗고 조금씩이지만 자신 본연의 모습을 드러내는 계기의 발판을 담았다.</p>  <p>Music Video.</p>', 
+            text: '<p>두꺼비집 - 김필선</p><p>Music Video.</p> <p>어떠한 존재로 인해 사랑을 경험하고 정신적 성장을 거쳐 마음의 벽을 열고 나오는 과정, 그 안에서 헤메고 괴로운 경험도 있지만 아픔을 딛고 단단해지는 소녀의 이야기. 베일과 거울은 마음의 벽과 타인의 시선을 의미한다. 나 스스로를 내비치지 못했던 소녀가 점차 베일을 벗고 조금씩이지만 자신 본연의 모습을 드러내는 계기의 발판을 담았다.</p>', 
             link: 'https://www.instagram.com/p/C0RXJdSJ54-/' 
         } 
     },
@@ -113,7 +112,7 @@ export const completionData = [
             title: '당신은 무엇으로 이루어져 있나요', 
             year: 2024,
             images: ['images/whoareyou01.png', 'images/whoareyou02.png', 'images/whoareyou03.png', 'images/whoareyou04.png'], 
-            text: '<p>인간의 본성에는 자아실현이라는 것이 있다.</p> <p>나다운 것.</p> <p>타인과 본인의 분리 또는 동질감 형성을 위해 분석하고 분리하고 수집하고 정리한다.</p> <p>한 사람을 한 단어로 설명하고 한눈에 이해하기 위해 혈액형에 특성을 부여하고 mbti를 검사한다.</p> <p>본 작품의 의도 또한 이와 같다. 나라는 사람을 보다 개인적이고 표면적인 방법으로 시각화한 작품이다.</p> <p>우리를 이루는 취향은 우리가 소유하는 물질로 나타난다.</p><p> 오랜 시간 소중히 간직한 애착품, 편안하고 유용하다고 생각한 사용품, 방안에 굴러다니던 잡동사니.</p> <p>우리의 생활 속에 존재하는 수많은 선택지 속 무의식적으로 선택한 물질의 작은 파현들을 모아 하나의 덩어리를 만들면 그 사람의 취향을 알 수 있고, 색을 볼 수 있고, 가치관을 배울 수 있다.</p> <p>작품 내에는 약 80여개의 소유물로 덩어리가 이루어져있다.</p> <p>작품을 보는 당신은 어떤 사람을 보고 있는가.</p> <p>당신은 무엇으로 이루어져 있는가.</p>', 
+            text: '<p>인간의 본성에는 자아실현이라는 것이 있다. 나다운 것. 타인과 본인의 분리 또는 동질감 형성을 위해 분석하고 분리하고 수집하고 정리한다. 한 사람을 한 단어로 설명하고 한눈에 이해하기 위해 혈액형에 특성을 부여하고 mbti를 검사한다.</p> <p>본 작품의 의도 또한 이와 같다. 나라는 사람을 보다 개인적이고 표면적인 방법으로 시각화한 작품이다. 우리를 이루는 취향은 우리가 소유하는 물질로 나타난다. 오랜 시간 소중히 간직한 애착품, 편안하고 유용하다고 생각한 사용품, 방안에 굴러다니던 잡동사니. 우리의 생활 속에 존재하는 수많은 선택지 속 무의식적으로 선택한 물질의 작은 파현들을 모아 하나의 덩어리를 만들면 그 사람의 취향을 알 수 있고, 색을 볼 수 있고, 가치관을 배울 수 있다.</p> <p>작품 내에는 약 80여개의 소유물로 덩어리가 이루어져있다. 작품을 보는 당신은 어떤 사람을 보고 있는가. 당신은 무엇으로 이루어져 있는가.</p>', 
             link: 'https://www.instagram.com/p/DCJu1k9ybSG/' 
         } 
     },
@@ -125,7 +124,7 @@ export const completionData = [
             title: '나의 세계', 
             year: 2022,
             images: ['images/myworld.jpg', 'images/myworld.mp4'], 
-            text: '<p>[나의 세계]</p> <p>나는 왜 잠이 안올까. 오늘도 잠에 들지 못한다.</p> <p>푸르스름한 새벽에 눈을 뜨면 또다른 환상적인 새로운 세계가 머릿속에서 펼쳐진다.</p> <p>상상의 나래를 펼치다 까무룩 잠에 들면 또다시 밝아오는 아침.</p>', 
+            text: '<p>[나의 세계]</p> <p>나는 왜 잠이 안올까. 오늘도 잠에 들지 못한다. 푸르스름한 새벽에 눈을 뜨면 또다른 환상적인 새로운 세계가 머릿속에서 펼쳐진다. 상상의 나래를 펼치다 까무룩 잠에 들면 또다시 밝아오는 아침.</p>', 
             link: 'https://www.instagram.com/p/CkLvLyqDyqw/' 
         } 
     },
@@ -136,7 +135,7 @@ export const completionData = [
         { 
             title: '꿈중독', 
             year: 2025,
-            text:'<p>아무도 꿈꾸지 않는 세상. 현재의 인간에게 꿈은 진화 과정에서 사라졌다.</p> <p>세상의 사람들에게 꿈이란 조현병의 합병증, 마약성 물질을 통한 환각 등으로 인식된다.</p> <p>잠은 하루의 끝마무리이자 내일의 시작으로, 하루의 피로를 풀고 몸을 리셋하는 신성한 의식으로 여겨진다.</p> <p>꿈을 꾸는 사람들이 잠을 자도 피로가 풀리지 않는다는 것은 잠을 깊이 자지 못하는, 진화하지 못하여 도태된 자라는 편견을 가진다.</p> <p>꿈꾸는 사람들은 편견과 고정관념이 야기한 자기 부정으로 인해 잠에 들고 싶지 않아 하는 경향이 크다.</p> <p>지속적으로 얕은 잠을 자는 그들은 계속해서 꿈을 꾸게 되고 결국 ‘꿈중독’이라 불리는 질병을 앓게 된다.</p>', 
+            text:'<p>창작 단편소설 습작</p><p>아무도 꿈꾸지 않는 세상. 현재의 인간에게 꿈은 진화 과정에서 사라졌다. 세상의 사람들에게 꿈이란 조현병의 합병증, 마약성 물질을 통한 환각 등으로 인식된다. 잠은 하루의 끝마무리이자 내일의 시작으로, 하루의 피로를 풀고 몸을 리셋하는 신성한 의식으로 여겨진다. 꿈을 꾸는 사람들이 잠을 자도 피로가 풀리지 않는다는 것은 잠을 깊이 자지 못하는, 진화하지 못하여 도태된 자라는 편견을 가진다. 꿈꾸는 사람들은 편견과 고정관념이 야기한 자기 부정으로 인해 잠에 들고 싶지 않아 하는 경향이 크다. 지속적으로 얕은 잠을 자는 그들은 계속해서 꿈을 꾸게 되고 결국 ‘꿈중독’이라 불리는 질병을 앓게 된다.</p>', 
             link: 'https://www.notion.so/2b9e5b01d52b80b79710db5f42db5b7b?source=copy_link'
         } 
     },
@@ -147,7 +146,7 @@ export const completionData = [
         { 
             title: '형해', 
             year: 2025,
-            text: '<p>어느 날 학교에 불시착한 외계인. 외계인은 그를 도와준 세 명의 대학생 나빈, 소라, 상록에게 우주 여행을 권한다. 둘은 거절했으나 나빈은 그를 따라 우주로 나가겠다고 하며 별안간 의식 불명의 상태가 되는데...</p><p>형해는 청춘이 겪는 실존적 위기를 외계인이라는 초현실적 소재로 풀어낸 소설이다. 미대생의 일상 속에 현대 청년들이 마주하는 정체성의 혼란과 관계의 상실, 본질에 대한 물음을 담고있다.</p><p>제목인 형해(形骸)는 생명이 빠져나간 빈 껍데기를 의미한다. 살아가면서 추구하는 삶의 형식과 진정한 본질 사이의 괴리감을 표현하고 있다. 병원에 있는 나빈이의 육체는 영혼 없는 형해이고, 힘들 때마다 회피하고 숨어버리는 상록이의 모습도 형해이다. 주인공 소라의 디자인 작업들도 본질 없는 형해가 될 위험을 안고 있다.</p><p>외계인의 등장은 단순한 SF적 장치가 아니라 고정관념의 전복을 상징한다. 우주여행이 하늘이 아닌 땅속으로 이어지고, 영혼이 육체를 떠나 자유롭게 여행할 수 있다는 설정은 우리가 당연하게 받아들이는 모든 것에 의문을 던진다. 소라가 이를 졸업 작품의 주제로 삼는 것은 예술가로서의 자각이자, 삶에 대한 새로운 시각을 얻었다는 증거이다.</p><p>무엇보다 이 작품은 우정에 관한 이야기다. 소라, 나빈, 상록 세 사람의 관계는 작품 전체를 관통하며, 결국 전시장을 빠져나와 함께 담배를 피우는 마지막 장면에서 "세 개의 형태"가 나란히 서있는 모습은 형해를 넘어선 본질적 연대를 보여준다. "얻고 잃은 모든 것들을 차치하고, 결국 올해는 남은 것이 있었다"는 깨달음. 아무리 힘든 시간을 겪어도, 곁에 남아있는 사람들이야말로 우리 삶의 진정한 본질이라는 것이다.</p>', 
+            text: '<p>창작 단편소설 습작</p><p>어느 날 학교에 불시착한 외계인. 외계인은 그를 도와준 세 명의 대학생 나빈, 소라, 상록에게 우주 여행을 권한다. 둘은 거절했으나 나빈은 그를 따라 우주로 나가겠다고 하며 별안간 의식 불명의 상태가 되는데...</p><p>형해는 청춘이 겪는 실존적 위기를 외계인이라는 초현실적 소재로 풀어낸 소설이다. 미대생의 일상 속에 현대 청년들이 마주하는 정체성의 혼란과 관계의 상실, 본질에 대한 물음을 담고있다.</p><p>제목인 형해(形骸)는 생명이 빠져나간 빈 껍데기를 의미한다. 살아가면서 추구하는 삶의 형식과 진정한 본질 사이의 괴리감을 표현하고 있다. 병원에 있는 나빈이의 육체는 영혼 없는 형해이고, 힘들 때마다 회피하고 숨어버리는 상록이의 모습도 형해이다. 주인공 소라의 디자인 작업들도 본질 없는 형해가 될 위험을 안고 있다.</p><p>외계인의 등장은 단순한 SF적 장치가 아니라 고정관념의 전복을 상징한다. 우주여행이 하늘이 아닌 땅속으로 이어지고, 영혼이 육체를 떠나 자유롭게 여행할 수 있다는 설정은 우리가 당연하게 받아들이는 모든 것에 의문을 던진다. 소라가 이를 졸업 작품의 주제로 삼는 것은 예술가로서의 자각이자, 삶에 대한 새로운 시각을 얻었다는 증거이다.</p><p>무엇보다 이 작품은 우정에 관한 이야기다. 소라, 나빈, 상록 세 사람의 관계는 작품 전체를 관통하며, 결국 전시장을 빠져나와 함께 담배를 피우는 마지막 장면에서 "세 개의 형태"가 나란히 서있는 모습은 형해를 넘어선 본질적 연대를 보여준다. "얻고 잃은 모든 것들을 차치하고, 결국 올해는 남은 것이 있었다"는 깨달음. 아무리 힘든 시간을 겪어도, 곁에 남아있는 사람들이야말로 우리 삶의 진정한 본질이라는 것이다.</p>', 
             link: 'https://www.notion.so/2bfe5b01d52b805ebfc1d0ba3ef54266?source=copy_link' 
         } 
     },
@@ -184,7 +183,7 @@ export const completionData = [
             title: '한국경제 : 신문을 읽는 가장 작은 단위',
             year: 2025, 
             images: ['images/koreconomy01.png','images/koreconomy02.png','images/koreconomy03.png','images/koreconomy04.png','images/koreconomy05.png','images/koreconomy06.png','images/koreconomy07.png','images/koreconomy08.png','images/koreconomy09.png','images/koreconomy10.png','images/koreconomy11.png','images/koreconomy12.png','images/koreconomy13.png','images/koreconomy14.png','images/koreconomy15.png','images/koreconomy16.png'],
-            text: '2025-02-25 발행한 한국경제 신문의 A1면 ~ A16면을 기존 레이아웃에 대하여 분석 - 해체 - 재구성하여 제작한 인쇄물.',
+            text: '<p>2025-02-25 발행한 한국경제 신문의 A1면 ~ A16면을</p> <p>기존 레이아웃에 대하여 분석 - 해체 - 재구성하여 제작한 인쇄물.</p>',
             link: 'https://www.hankyung.com/'
         }
     },
@@ -220,7 +219,7 @@ export const completionData = [
             title: 'This Too Shall Pass',
             year: 2023,
             images: ['images/okgo.png'],
-            text: 'Ok Go의 <This Too Shall Pass - Rube Goldberg Machine> 영상을 주제로 진행한 작업. 대지의 가로축은 소리를 발생시킨 원인을 순서대로 나열하고, 세로축은 영상의 타임라인으로 영상 속 모든 사운드를 분류했다. 세로축의 단위는 1초이다. 가로축의 소리 원인으로 설정된 등장인물, 오브제는 구글링으로 찾은 이미지로 대체하여 보는 이로 하여금 해석의 즐거움을 주게 했다.',
+            text: 'Ok Go의 <This Too Shall Pass - Rube Goldberg Machine> 영상을 주제로 진행한 인포메이션 디자인. 대지의 가로축은 소리를 발생시킨 원인을 순서대로 나열하고, 세로축은 영상의 타임라인으로 영상 속 모든 사운드를 분류했다. 세로축의 단위는 1초이다. 가로축의 소리 원인으로 설정된 등장인물, 오브제는 구글링으로 찾은 이미지로 대체하여 보는 이로 하여금 해석의 즐거움을 주게 했다.',
             link: 'https://www.instagram.com/p/C1s7s2MoxMF/'
         }
     },
@@ -249,7 +248,7 @@ export const completionData = [
                 'images/witchhunt07.png', 'images/witchhunt08.png', 'images/witchhunt09.png', 
                 'images/witchhunt10.png'
             ], 
-            text: '<p>최제훈, 『퀴르발 남작의 성』 </p> <p>: 마녀의 스트레오타입에 대한 고찰 - 휘뚜루마뚜루 세계사 1</p> <p>최제훈 작가의 단편집에 나오는 스토리를 담았다.</p> <p>본 대사는 작중 ‘헤카테’라는 그리스 신화에 나오는 마법의 여신의 대사이다.</p> <p>마녀란 무엇인가?</p> <p>마녀는 아니지만 누구든지 손가락질만 하면 불태울 수 있는 마술.</p><p>그리고 언제든지 입장이 바뀔 수 있다는 아이러니함을 담았다.</p>',
+            text: '<p>최제훈, 『퀴르발 남작의 성』 : 마녀의 스트레오타입에 대한 고찰 - 휘뚜루마뚜루 세계사 1</p> <p>최제훈 작가의 단편집에 나오는 스토리를 담았다. 본 대사는 작중 ‘헤카테’라는 그리스 신화에 나오는 마법의 여신의 대사이다. 마녀란 무엇인가? 마녀는 아니지만 누구든지 손가락질만 하면 불태울 수 있는 마술. 그리고 언제든지 입장이 바뀔 수 있다는 아이러니함을 담았다.</p>',
             link: ['https://yeonjijee.github.io/-/']
         } 
     },
@@ -285,7 +284,7 @@ export const completionData = [
             title: '순수',
             year: 2023,
             images: ['images/pure01.png', 'images/pure02.png','images/pure03.png','images/pure04.png','images/pure05.png','images/pure06.png', 'images/pure08.png','images/pure10.png','images/pure11.png','images/pure12.png','images/pure13.png','images/pure15.png'],
-            text: '<p>순수한 마음 그대로를 담아보고 싶었다.</p>',
+            text: '순수한 마음 그대로를 담아보고 싶었다.',
             link: 'https://www.instagram.com/ee_j.film/'
         }
     },
@@ -297,7 +296,7 @@ export const completionData = [
             title: '자유',
             year: 2024,
             images: ['images/freedom01.png', 'images/freedom04.png', 'images/freedom07.png', 'images/freedom08.png', 'images/freedom10.png','images/freedom12.png','images/freedom13.png','images/freedom16.png','images/freedom17.png','images/freedom18.png'],
-            text: '스스럼 없는 그대의 자유는 무엇을 담고 있는가.',
+            text: '스스럼 없는 그대의 자유는 무엇을 감당하고 있는가.',
             link: 'https://www.instagram.com/p/C_45J-YT_Ui/?img_index=1'
         }
     },
@@ -321,7 +320,7 @@ export const completionData = [
             title: 'Projection; 혼재된 상',
             year: 2024,
             images: ['images/cielo01.png', 'images/cielo02.png','images/cielo03.png','images/cielo04.png','images/cielo05.png'],
-            text: '<p>2024 CIELO 6기 PHOTO로 참여한 작업.</p><p>나 혼자 있는 밤이라는 사색의 시간 속 마주하는 진정한 내면의 모습들.</p><p>패션 매거진 작업.</p>',
+            text: '<p>패션 매거진 대외활동.</p><p>2024 CIELO 6기 PHOTO로 참여한 작업.</p><p>나 혼자 있는 밤이라는 사색의 시간 속 마주하는 진정한 내면의 모습들.</p>',
             link: 'https://www.instagram.com/p/DGKAtNuzhtq/?img_index=1'
         }
     },
